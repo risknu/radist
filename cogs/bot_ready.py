@@ -22,7 +22,6 @@ class BotReady(commands.Cog):
             await self.bot.change_presence(activity=disnake.Activity(
                 type=disnake.ActivityType.watching,
                 name=Conf.BOT_ACTIVITY_STRING), status=Conf.BOT_STATUS)
-        
 
 def setup(bot: commands.Bot) -> None:
     bot.add_cog(BotReady(bot))

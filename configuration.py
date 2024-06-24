@@ -38,5 +38,5 @@ class Conf:
     MODEL: str = "llama3"
     
     BOT_ACTIVITY_TYPE: str = "watch"
-    BOT_ACTIVITY_STRING: str = "risknu pencil"
-    BOT_STATUS: Status = Status.idle
+    BOT_ACTIVITY_STRING: str = "github.com/radist"
+    BOT_STATUS: Status = Status.online
