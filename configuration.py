@@ -32,11 +32,12 @@ check_project_valid()
 @dataclass
 class ENV:
     TOKEN: Optional[str] = environ.get('TOKEN')
-    
+
+
 @dataclass
 class Conf:
     MODEL: str = "llama3"
-    
+
     BOT_ACTIVITY_TYPE: str = "watch"
     BOT_ACTIVITY_STRING: str = "github.com/radist"
     BOT_STATUS: Status = Status.online
