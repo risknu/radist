@@ -4,7 +4,7 @@ This bot uses the Ollama model, and you can choose any model you like, with or w
 ## Usage
 Currently, we have only one command for usage:
 
-`/ask_ollama ask_string_text: str` - Ask something from Ollama. It also works with `@bot` and with replies as well.
+`/ask_radist ask_string_text: str` - Ask something from Ollama. It also works with `@bot` and with replies as well.
 
 You can change the model and settings in `configuration.py` and the bot token in `.env`.
 

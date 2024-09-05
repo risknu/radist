@@ -1,24 +1,22 @@
 from __future__ import annotations
 
-from typing import Any, Mapping, AsyncIterator
+from typing import Any, Mapping, AsyncIterator, Optional
 
 import re
+
 import disnake
 from disnake.ext import commands
 
 from ollama import AsyncClient
 
-
-class OllamaAPI(commands.Cog):
+class ollama_api(commands.Cog):
     def __init__(self, bot: commands.Bot = None) -> None:
         self.bot: commands.Bot = bot
 
     @staticmethod
-    async def ollama_search(ask_string_text: str = None) -> str | Mapping[str, Any] | AsyncIterator[Mapping[str, Any]]:
-        if ask_string_text is None:
-            return ""
-        return await AsyncClient().chat(model='llama3', messages=[{'role': 'user', 'content': ask_string_text}],
-                                        stream=True)
+    async def ollama_search(ask_string_text: Optional[str] = None) -> str | Mapping[str, Any] | AsyncIterator[Mapping[str, Any]]:
+        if ask_string_text is None: return ""
+        return await AsyncClient().chat(model='llama3', messages=[{'role': 'user', 'content': ask_string_text}], stream=True)
 
     async def create_editable_interaction_message(self, inter: disnake.ApplicationCommandInteraction = None,
                                                   ask_string_text: str = None) -> None:
@@ -50,17 +48,12 @@ class OllamaAPI(commands.Cog):
 
         if ctx.reference:
             replied_message: disnake.Message = await ctx.channel.fetch_message(ctx.reference.message_id)
-            if replied_message.author == self.bot.user:
-                await self.create_editable_message(ctx, ctx.content)
+            if replied_message.author == self.bot.user: await self.create_editable_message(ctx, ctx.content)
 
-    @commands.slash_command(name="ask_ollama", description="Ask something from Ollama3")
-    async def ask_ollama_slash(self, inter: disnake.ApplicationCommandInteraction = None,
-                               ask_string_text: str = None) -> None:
-        try:
-            await self.create_editable_interaction_message(inter, ask_string_text)
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
+    @commands.slash_command(name="ask_radist", description="Ask something from radist :)")
+    async def ask_ollama_slash(self, inter: disnake.ApplicationCommandInteraction = None, ask_string_text: str = None) -> None:
+        try: await self.create_editable_interaction_message(inter, ask_string_text)
+        except Exception as e: print(f"[ERR] an error occurred -> {e}")
 
 def setup(bot: commands.Bot) -> None:
-    bot.add_cog(OllamaAPI(bot))
+    bot.add_cog(ollama_api(bot))
