@@ -1,30 +1,20 @@
-## radist - A Bot You Can Talk to Like a Human
-This bot uses the Ollama model, and you can choose any model you like, with or without censorship, and so on. The functionality of this bot includes pinging it, replying to its messages with simple commands, interacting with it, obtaining information, and more.
+## Radist - Safely Save Messages and Memorable Moments
+We've all experienced times when we wanted to save a moment from a game or chat but didn't have the means to do so, whether due to lack of space or other reasons. This project is here to help. With a simple command `...`, you can easily and quickly save any image or text you want, all for free, without losing quality, and always within reach.
 
-## Usage
-Currently, we have only one command for usage:
-
-`/ask_radist ask_string_text: str` - Ask something from Ollama. It also works with `@bot` and with replies as well.
-
-You can change the model and settings in `configuration.py` and the bot token in `.env`.
-
-## Installation
-To install, you will need Python 3.11 or higher and create a `.env` file based on `.env.example`. Here is the instruction on how to install locally without `docker`:
-
-> [!NOTE]  
-> You must have Ollama installed locally and the model you want to use.
-
-### Windows
-```sh
-$ git clone https://github.com/risknu/radist.git
-$ cd radist; pip install -r requirements.txt
+## Getting Started
+I assume everyone knows how to download a repository, navigate into it, and so on. Ideally, you will need Python 3.11, and to install everything and run the project, follow these steps:
+```bash
+# Install dependencies (python-dotenv, disnake, ruff)
+$ pip install -r requirements.txt 
+# Run the main script
+$ python run.py
 ```
 
-### MacOS, Linux
-```sh
-$ git clone https://github.com/risknu/radist.git
-$ cd radist && pip install -r requirements.txt
-```
+## License
+The project is licensed under `Apache License 2.0`. If you'd like, you can contact me to discuss the license. You can reach out on Discord at `risknu`, on Telegram at `@risknu`, or via email at `risknu.go@gmail.com`.
 
-### License
-Licensed under the `Apache License 2.0`
+---
+
+```
+Copyright (c) risknu 2023-2024
+```
